@@ -12,15 +12,15 @@ on:
 jobs:
   build-mac:
     name: build-mac
-    runs-on: macos-latest
+    runs-on: macos-13
 
     steps:
-      - uses: actions/checkout@main
+      - uses: actions/checkout@v4
         with:
           submodules: 'recursive'
 
       - name: Cache Dependencies
-        uses: actions/cache@main
+        uses: actions/cache@v4
         with:
           path: /Users/runner/Library/Caches/Homebrew
           key: ${{ runner.os }}-deps-cache
@@ -30,7 +30,6 @@ jobs:
           brew cleanup
           brew install qt@5
 
-      # ---- ДОДАЙТЕ ЦЕЙ КРОК ТУТ ----
       - name: Setup JDK 8
         uses: actions/setup-java@v4
         with:
@@ -78,7 +77,7 @@ jobs:
           chmod +x /Users/runner/work/UltimMC/build/dist/UltimMC.app/Contents/MacOS/UltimMC
 
       - name: Upload Artifacts
-        uses: actions/upload-artifact@main
+        uses: actions/upload-artifact@v4
         with:
           name: mmc-cracked-osx64
           path: /Users/runner/work/UltimMC/build/dist
