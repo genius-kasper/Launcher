@@ -246,6 +246,7 @@ jobs:
           cd build
           cmake \
            -DCMAKE_POLICY_VERSION_MINIMUM=3.5 \
+           -DCMAKE_Java_COMPILER_FLAGS="-source 8 -target 8" \
            -DCMAKE_C_COMPILER=/usr/bin/clang \
            -DCMAKE_CXX_COMPILER=/usr/bin/clang++ \
            -DCMAKE_BUILD_TYPE=Release \
