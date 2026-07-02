@@ -222,7 +222,7 @@ jobs:
 
   build-mac:
     name: build-mac
-    runs-on: macos-13
+    runs-on: macos-13  # Оновлено для сумісності з середовищем GitHub Actions
 
     steps:
       - uses: actions/checkout@main
